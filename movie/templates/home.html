@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 </head>
-<body>
+<body><!--
 	<h1>
 		welcome to home <font color="#8924FA">{{name}}</font>
 	</h1>
@@ -13,6 +13,27 @@
 		this is the full webpage
 	</h2>
 	<br>
-	<a href="http://127.0.0.1:8000/about.html">see this webpage</a>
+	<a href="http://127.0.0.1:8000/about.html">see this webpage</a>-->
+	<div class="container">
+    <form action="">
+        <div class="mb-3">
+            <label for="searchMovie" class="form-label">
+                Search for Movie:
+            </label>
+            <input type="text" class="form-control" name="searchMovie"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>   
+    <p>Searching for {{searchTerm}}</p> 
+        {% for movie in movies %}
+                <h2>{{ movie.title}}</h2>
+                <h3>{{ movie.description}}</h3>
+                <img src="{{ movie.image.url }}">
+                {% if movie.url %}
+                    <a href="{{ movie.url }}"> Movie Link </a>
+                {% endif %}
+        {% endfor %}
+    <br/>
+</div>
 </body>
 </html>
