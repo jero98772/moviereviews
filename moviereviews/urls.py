@@ -21,4 +21,6 @@ from movie import views as moviesViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', moviesViews.home),
+    path('about.html', moviesViews.about),
+
 ]
